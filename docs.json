@@ -144,6 +144,10 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "https://rest.runpod.io/v1/openapi.json"
       }
     ]
   }
