@@ -1,0 +1,64 @@
+---
+title: "API keys"
+description: "API keys authenticate requests to RunPod. You can generate an API key with  permission,  permission, or  permission."
+---
+
+<Note>
+  Legacy API keys generated before November 11, 2024 have either Read/Write or Read Only access to GraphQL based on what was set for that key. All legacy keys have full access to AI API. To improve security, generate a new key with Restricted permission and select the minimum permission needed for your use case.
+</Note>
+
+## Generate[​](#generate "Direct link to Generate")
+
+To create an API key:
+
+1. From the console, select **Settings**.
+
+2. Under **API Keys**, choose **+ Create API Key**.
+
+3. Select the permission. If you choose **Restricted** permission, you can customize access for each API:
+
+   * **None**: No access
+   * (AI API only) **Restricted**: Custom access to specific endpoints. No access is default.
+   * **Read/Write**: Full access
+   * **Read Only**: Read access without write access
+
+   <Warning>
+     Select the minimum permission needed for your use case. Only allow full access to GraphQL when absolutely necessary for automations like creating or managing RunPod resources outside of Serverless endpoints.
+   </Warning>
+
+4. Choose **Create**.
+
+<Note>
+  Once your API key is generated, keep it secure. Treat it like a password and avoid sharing it in insecure environments.
+</Note>
+
+## Edit permission[​](#edit-permission "Direct link to Edit permission")
+
+To edit an API key:
+
+1. From the console, select **Settings**.
+2. Under **API Keys**, select the pencil icon and select the permission.
+3. Choose **Update**.
+
+## Disable[​](#disable "Direct link to Disable")
+
+To disable an API key:
+
+1. From the console, select **Settings**.
+2. Under **API Keys**, select the toggle and select **Yes**.
+
+## Enable[​](#enable "Direct link to Enable")
+
+To enable an API key:
+
+1. From the console, select **Settings**.
+2. Under **API Keys**, select the toggle and select **Yes**.
+
+## Revoke[​](#revoke "Direct link to Revoke")
+
+To delete an API key:
+
+1. From the console, select **Settings**.
+2. Under **API Keys**, select the trash can icon and select **Revoke Key**.
+
+[Edit this page](https://github.com/runpod/docs/blob/main/docs/get-started/api-keys.md)

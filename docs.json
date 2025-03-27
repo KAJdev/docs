@@ -1,102 +1,150 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "RunPod Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0D9373",
+    "light": "#55D799",
+    "dark": "#0D9373"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Get started",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "get-started/manage-accounts",
+              "get-started/billing-information",
+              "get-started/api-keys",
+              "get-started/connect-to-runpod",
+              "get-started/referrals"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Serverless",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "serverless/overview",
+              "serverless/get-started",
+              "serverless/quick-deploys",
+              "serverless/github-integration"
+            ]
+          },
+          {
+            "group": "Pods",
+            "pages": [
+              "pods/overview",
+              "pods/choose-a-pod",
+              "pods/manage-pods",
+              "pods/connect-to-a-pod",
+              "pods/networking",
+              "pods/logs",
+              "pods/savings-plans"
+            ]
+          },
+          {
+            "group": "runpodctl",
+            "pages": [
+              "runpodctl/overview",
+              "runpodctl/install-runpodctl",
+              "runpodctl/reference/runpodctl"
+            ]
+          },
+          {
+            "group": "Fine Tuning",
+            "pages": [
+              "fine-tune/fine-tune-a-model"
+            ]
+          },
+          {
+            "group": "Instant Clusters",
+            "pages": [
+              "instant-clusters/overview"
+            ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/overview"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/dstack",
+              "integrations/mods",
+              "integrations/skypilot"
+            ]
+          },
+          {
+            "group": "Hosting",
+            "pages": [
+              "hosting/overview",
+              "hosting/burn-testing",
+              "hosting/maintenance-and-reliability",
+              "hosting/partner-requirements"
+            ]
+          },
+          {
+            "group": "References",
+            "pages": [
+              "references/cpu-types",
+              "references/gpu-types",
+              "references/faq/",
+              "references/video-resources"
+            ]
+          },
+          {
+            "group": "Glossary",
+            "pages": [
+              "glossary"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Tutorials",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Overview",
             "pages": [
-              "api-reference/introduction"
+              "tutorials/overview"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Serverless",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              {
+                "group": "CPU",
+                "pages": [
+                  "tutorials/serverless/cpu/run-ollama-inference"
+                ]
+              },
+              {
+                "group": "GPU",
+                "pages": [
+                  "tutorials/serverless/gpu/run-your-first",
+                  "tutorials/serverless/gpu/generate-sdxl-turbo",
+                  "tutorials/serverless/gpu/run-gemma-7b"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Pods",
+            "pages": [
+              "tutorials/pods/run-your-first",
+              "tutorials/pods/run-fooocus",
+              "tutorials/pods/run-ollama",
+              "tutorials/pods/build-docker-images",
+              "tutorials/pods/connect-to-vscode",
+              "tutorials/pods/fine-tune-llm-axolotl"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

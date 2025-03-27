@@ -1,0 +1,67 @@
+---
+title: "Get started with Endpoints"
+---
+
+## Build a Serverless Application on RunPod[​](#build-a-serverless-application-on-runpod "Direct link to Build a Serverless Application on RunPod")
+
+Follow these steps to set up a development environment, create a handler file, test it locally, and build a Docker image for deployment:
+
+1. Create a Python virtual environment and install RunPod SDK
+
+```
+# 1. Create a Python virtual environmentpython3 -m venv venv# 2. Activate the virtual environment# On macOS/Linux:source venv/bin/activate# On Windows:venv\Scripts\activate# 3. Install the RunPod SDKpip install runpod
+```
+
+2. Create the handler file (rp\_handler.py):
+
+```
+import runpodimport timedef handler(event):    input = event['input']    instruction = input.get('instruction')    seconds = input.get('seconds', 0)    # Placeholder for a task; replace with image or text generation logic as needed    time.sleep(seconds)    result = instruction.replace(instruction.split()[0], 'created', 1)    return resultif __name__ == '__main__':    runpod.serverless.start({'handler': handler})
+```
+
+3. Create a test\_input.json file in the same folder:
+
+```
+{    "input": {        "instruction": "create a image",        "seconds": 15    }}
+```
+
+4. Test the handler code locally:
+
+```
+python3 rp_handler.py# You should see an output like this:--- Starting Serverless Worker |  Version 1.7.0 ---INFO   | Using test_input.json as job input.DEBUG  | Retrieved local job: {'input': {'instruction': 'create a image', 'seconds': 15}, 'id': 'local_test'}INFO   | local_test | Started.DEBUG  | local_test | Handler output: created a imageDEBUG  | local_test | run_job return: {'output': 'created a image'}INFO   | Job local_test completed successfully.INFO   | Job result: {'output': 'created a image'}INFO   | Local testing complete, exiting.
+```
+
+5. Create a Dockerfile:
+
+```
+FROM python:3.10-slimWORKDIR /RUN pip install --no-cache-dir runpodCOPY rp_handler.py /# Start the containerCMD ["python3", "-u", "rp_handler.py"]
+```
+
+6. Build and push your Docker image
+
+```
+docker build --platform linux/amd64 --tag <username>/<repo>:<tag> .
+```
+
+7. Push to your container registry:
+
+```
+docker push <username>/<repo>:<tag>
+```
+
+<Note>
+  When building your docker image, you might need to specify the platform you are building for. This is important when you are building on a machine with a different architecture than the one you are deploying to.
+
+  When building for RunPod providers use `--platform=linux/amd64`.
+</Note>
+
+Alternatively, you can clone our [worker-basic](https://github.com/runpod-workers/worker-basic) repository to quickly build a Docker image and push it to your container registry for a faster start.
+
+Now that you've pushed your container registry, you're ready to deploy your Serverless Endpoint to RunPod.
+
+## Deploy a Serverless Endpoint[​](#deploy-a-serverless-endpoint "Direct link to Deploy a Serverless Endpoint")
+
+This step will walk you through deploying a Serverless Endpoint to RunPod. You can refer to this walkthrough to deploy your own custom Docker image.
+
+[Deploy your first serverless endpoint](https://app.tango.us/app/embed/7df17d43-9467-4d09-9b0f-19eba8a17249)
+
+[Edit this page](https://github.com/runpod/docs/blob/main/docs/serverless/get-started.md)
